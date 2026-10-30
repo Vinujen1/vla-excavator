@@ -1,0 +1,21 @@
+{
+  "_comment": "TEMPLATE ONLY. Copy to config/calibration.json after supervised commissioning (docs/COMMISSIONING.md). Every value below is a placeholder and MUST be measured on the real machine. Leave verified=false until a person has checked each joint target, limit and region at low duty with the physical E-stop in reach.",
+  "kind": "hardware",
+  "version": 1,
+  "verified": false,
+  "verified_by": null,
+  "verified_at": null,
+  "joint_units": {"boom": "deg", "cabin": "deg", "bucket": "deg", "stick": "deg"},
+  "joint_limits": {"boom": [0, 1], "cabin": [0, 1], "bucket": [0, 1], "stick": [0, 1]},
+  "joint_targets": {
+    "boom":   {"home": 0, "carry": 0, "dig": 0},
+    "cabin":  {"home": 0, "dig": 0, "dump": 0},
+    "bucket": {"home": 0, "open": 0, "curled": 0},
+    "stick":  {"home": 0, "dig": 0, "scoop_end": 0}
+  },
+  "tolerance": {"boom": 1.0, "cabin": 1.0, "bucket": 1.0, "stick": 1.0},
+  "camera_to_base": null,
+  "dig_region": null,
+  "dump_region": null,
+  "notes": "Fill from measurements; see docs/COMMISSIONING.md."
+}

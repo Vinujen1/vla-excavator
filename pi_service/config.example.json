@@ -1,0 +1,15 @@
+{
+  "_comment": "PROPOSED wiring, NOT VERIFIED. Check every pin, polarity, driver jumper and ground physically, then set pins_verified to true. Feedback is 'simulated' here so the simulation backend can run closed-loop moves; the hardware backend refuses simulated feedback.",
+  "pins_verified": false,
+  "pwm_frequency_hz": 500,
+  "joints": [
+    {"name": "boom",   "channel": {"driver": "driver1", "side": "A", "enable": 17, "in_a": 27, "in_b": 22},
+     "max_duty": 0.35, "feedback": {"kind": "simulated", "units": "deg"}, "limits": [0, 60]},
+    {"name": "cabin",  "channel": {"driver": "driver1", "side": "B", "enable": 25, "in_a": 23, "in_b": 24},
+     "max_duty": 0.35, "feedback": {"kind": "simulated", "units": "deg"}, "limits": [-90, 90]},
+    {"name": "bucket", "channel": {"driver": "driver2", "side": "A", "enable": 12, "in_a": 5, "in_b": 6},
+     "max_duty": 0.35, "feedback": {"kind": "simulated", "units": "deg"}, "limits": [0, 120]},
+    {"name": "stick",  "channel": {"driver": "driver2", "side": "B", "enable": 26, "in_a": 13, "in_b": 19},
+     "max_duty": 0.35, "feedback": {"kind": "simulated", "units": "deg"}, "limits": [0, 90]}
+  ]
+}

@@ -1,0 +1,6 @@
+# Pi service (Raspberry Pi OS Bookworm, Python 3.11). Install into a venv; see README.md.
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+# Hardware backend only. On Raspberry Pi OS prefer the distro package: sudo apt install python3-lgpio
+# (then create the venv with --system-site-packages), or: pip install lgpio
