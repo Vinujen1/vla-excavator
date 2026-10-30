@@ -1,0 +1,20 @@
+# Installed into a venv created with --system-site-packages, so NVIDIA's
+# OpenCV 4.8.0 and TensorRT 10.3 (/usr/lib/python3.10/dist-packages) are reused, not replaced.
+# Install order matters on the Jetson: see README "One-time setup".
+numpy==1.26.4            # venv-local; system NumPy 1.21.5 is untouched
+pyrealsense2==2.59.1.11053
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+python-multipart==0.0.32
+faster-whisper==1.2.1
+ctranslate2==4.8.4
+onnxruntime==1.23.2
+av==17.1.0
+# Jetson GPU PyTorch: Ultralytics' JetPack 6 wheels (not PyPI), see README
+#   torch 2.10.0, torchvision 0.25.0, nvidia-cudss-cu12 0.7.1.6 (--no-deps)
+# ultralytics==8.4.191 is installed with --no-deps (its opencv-python dep would shadow NVIDIA OpenCV)
+nvidia-ml-py==13.615.71
+polars==2.0.0
+psutil==7.2.2
+ultralytics-thop==2.2.3
+pytest==8.3.3

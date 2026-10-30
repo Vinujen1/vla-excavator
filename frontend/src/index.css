@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+body { @apply bg-paper font-sans text-[15px] text-graphite antialiased; font-feature-settings: "tnum" 1; }
+
+:focus-visible { outline: 2px solid #2F5EA8; outline-offset: 2px; border-radius: 4px; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes beacon { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+.animate-rise { animation: rise 220ms ease-out; }
+.animate-beacon { animation: beacon 1.4s ease-in-out infinite; }
+
+/* Hazard edge on the stop control and the hardware-mode banner (site-safety vernacular). */
+.hazard {
+  background-image: repeating-linear-gradient(-45deg, #1C2430 0 8px, #F2B300 8px 16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise, .animate-beacon, .animate-pulse { animation: none !important; }
+  * { transition: none !important; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #C9D0D9; border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }

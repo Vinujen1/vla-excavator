@@ -1,0 +1,16 @@
+{
+  "_comment": "SIMULATION ONLY. Joint targets for the simulated Pi (pi_service/config.example.json limits). Never accepted for hardware execution. No camera-to-base transform: target positions are not checked against regions in simulation.",
+  "kind": "simulation",
+  "version": 1,
+  "verified": false,
+  "joint_units": {"boom": "deg", "cabin": "deg", "bucket": "deg", "stick": "deg"},
+  "joint_limits": {"boom": [0, 60], "cabin": [-90, 90], "bucket": [0, 120], "stick": [0, 90]},
+  "joint_targets": {
+    "boom":   {"home": 30, "carry": 45, "dig": 12},
+    "cabin":  {"home": 0, "dig": -30, "dump": 45},
+    "bucket": {"home": 40, "open": 20, "curled": 100},
+    "stick":  {"home": 45, "dig": 65, "scoop_end": 30}
+  },
+  "tolerance": {"boom": 1.5, "cabin": 2.0, "bucket": 2.0, "stick": 1.5},
+  "notes": "Simulated workspace for development and tests."
+}
